@@ -5,7 +5,7 @@
  * Return: Always zero
  */
 
-void initalize(void)
+void initalize()
 {
 	PID_SH = getpid();
 	INTERACTIVE_SH = isatty(STDIN_FILENO);
@@ -45,7 +45,7 @@ void initalize(void)
  * _child_handler - signal handler for SIGCHLD
  * Return: always zero
  */
-void _child_handler(void)
+void _child_handler()
 {
 	while (waitpid(-1, NULL, WNOHANG) > 0)
 	{
@@ -57,7 +57,7 @@ void _child_handler(void)
  * _int_handler - Signal handler for SIGINT
  * Return: always zero
  */
-void _int_handler(void)
+void _int_handler()
 {
 	/*We send a SIGTERM signal to the child process*/
 	if (kill(pid,SIGTERM) == 0)
