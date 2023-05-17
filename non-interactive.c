@@ -73,6 +73,7 @@ char *read_stream(void)
   }
   break;
  }
+ return (line);
 }
 
 /**
