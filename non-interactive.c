@@ -73,4 +73,3 @@ char *read_stream(void)
   }
   break;
  }
-}

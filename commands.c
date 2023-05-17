@@ -44,7 +44,7 @@ int commands(char *args[])
 				stdOut = dup(STDOUT_FILENO); 
 				
 				dup2(fileDesc, STDOUT_FILENO); 
-				close(fileDes);
+				close(fileDesc);
 				printf("%s\n", getcwd(current_dir, 1024));
 				dup2(stdOut, STDOUT_FILENO);
 			}
