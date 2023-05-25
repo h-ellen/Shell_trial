@@ -14,9 +14,6 @@ void initalize()
 			while (tcgetpgrp(STDIN_FILENO) != (PGID_SH = getpgrp()))
 					kill(PID_SH, SIGTTIN);
 
-			act_child.sa_handler = _child_handler;
-			act_int.sa_handler = _int_handler;
-
 			sigaction(SIGCHLD, &act_child, 0);
 			sigaction(SIGINT, &act_int, 0);
 	
